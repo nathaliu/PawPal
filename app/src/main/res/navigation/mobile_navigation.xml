@@ -3,23 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/nav_home"
         android:name="com.example.pawpal.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_map"
-        android:name="com.example.pawpal.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/nav_map"
+        android:name="com.example.pawpal.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
 
     <fragment
-        android:id="@+id/navigation_paw"
-        android:name="com.example.pawpal.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:id="@+id/nav_chat"
+        android:name="com.example.pawpal.ChatFragment"
+        android:label="@string/title_chat"
         tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.pawpal.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
 </navigation>

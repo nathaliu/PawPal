@@ -24,19 +24,19 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.nav_home:
                     replaceFragment(new HomeFragment());
                     break;
 
-                case R.id.navigation_map:
+                case R.id.nav_map:
                     replaceFragment(new MapFragment());
                     break;
 
-                case R.id.navigation_chat:
+                case R.id.nav_chat:
                     replaceFragment(new ChatFragment());
                     break;
 
-                case R.id.navigation_profile:
+                case R.id.nav_profile:
                     replaceFragment(new ProfileFragment());
                     break;
             }
