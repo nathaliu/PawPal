@@ -1,18 +1,171 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pink"
+    android:fillViewport="true"
+    android:background="@color/tofu"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
 
-</FrameLayout>
+        <!-- User Information Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="50dp"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/userImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_plus"
+                android:scaleType="center"
+                android:background="@drawable/circle_background"
+                android:clipToOutline="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Add User Photo"/>
+
+            <EditText
+                android:id="@+id/usernameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nom"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <!-- Pet Information Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="5dp"
+            android:paddingBottom="200dp">
+
+
+            <!-- Grid Layout for Pet Photos -->
+            <GridLayout
+                android:id="@+id/petPhotosGridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="2"
+                android:alignmentMode="alignMargins"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/petPhoto1"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/ic_plus"
+                    android:scaleType="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="Add Pet Photo"/>
+
+                <ImageView
+                    android:id="@+id/petPhoto2"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/ic_plus"
+                    android:scaleType="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="Add Pet Photo"/>
+
+                <ImageView
+                    android:id="@+id/petPhoto3"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/ic_plus"
+                    android:scaleType="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="Add Pet Photo"/>
+
+                <ImageView
+                    android:id="@+id/petPhoto4"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/ic_plus"
+                    android:scaleType="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="Add Pet Photo"/>
+
+                <ImageView
+                    android:id="@+id/petPhoto5"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/ic_plus"
+                    android:scaleType="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="Add Pet Photo"/>
+
+                <ImageView
+                    android:id="@+id/petPhoto6"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/ic_plus"
+                    android:scaleType="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="Add Pet Photo"/>
+
+            </GridLayout>
+
+            <EditText
+                android:id="@+id/petNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nom"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/petRaceEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Race"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/petPersonalityEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Personnalité"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
