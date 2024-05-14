@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             if (itemId == R.id.nav_home) {
                 replaceFragment(new HomeFragment());
             } else if (itemId == R.id.nav_map) {
-                replaceFragment(new MapFragment());
+                replaceFragment(new MapsFragment());
             } else if (itemId == R.id.nav_chat) {
                 replaceFragment(new ChatFragment());
             } else if (itemId == R.id.nav_profile) {
