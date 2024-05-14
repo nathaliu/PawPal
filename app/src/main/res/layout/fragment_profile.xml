@@ -27,7 +27,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_plus"
-                android:scaleType="center"
+                android:scaleType="fitCenter"
                 android:background="@drawable/circle_background"
                 android:clipToOutline="true"
                 android:clickable="true"
@@ -71,11 +71,12 @@
                     android:layout_height="150dp"
                     android:layout_columnWeight="1"
                     android:src="@drawable/ic_plus"
-                    android:scaleType="center"
+                    android:scaleType="fitCenter"
                     android:background="@drawable/rounded_corner"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:contentDescription="Add Pet Photo"/>
+                    android:contentDescription="Add Pet Photo"
+                    android:adjustViewBounds="true"/>
 
                 <ImageView
                     android:id="@+id/petPhoto2"
@@ -83,11 +84,12 @@
                     android:layout_height="150dp"
                     android:layout_columnWeight="1"
                     android:src="@drawable/ic_plus"
-                    android:scaleType="center"
+                    android:scaleType="fitCenter"
                     android:background="@drawable/rounded_corner"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:contentDescription="Add Pet Photo"/>
+                    android:contentDescription="Add Pet Photo"
+                    android:adjustViewBounds="true"/>
 
                 <ImageView
                     android:id="@+id/petPhoto3"
@@ -95,11 +97,12 @@
                     android:layout_height="150dp"
                     android:layout_columnWeight="1"
                     android:src="@drawable/ic_plus"
-                    android:scaleType="center"
+                    android:scaleType="fitCenter"
                     android:background="@drawable/rounded_corner"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:contentDescription="Add Pet Photo"/>
+                    android:contentDescription="Add Pet Photo"
+                    android:adjustViewBounds="true"/>
 
                 <ImageView
                     android:id="@+id/petPhoto4"
@@ -107,11 +110,12 @@
                     android:layout_height="150dp"
                     android:layout_columnWeight="1"
                     android:src="@drawable/ic_plus"
-                    android:scaleType="center"
+                    android:scaleType="fitCenter"
                     android:background="@drawable/rounded_corner"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:contentDescription="Add Pet Photo"/>
+                    android:contentDescription="Add Pet Photo"
+                    android:adjustViewBounds="true"/>
 
                 <ImageView
                     android:id="@+id/petPhoto5"
@@ -119,11 +123,12 @@
                     android:layout_height="150dp"
                     android:layout_columnWeight="1"
                     android:src="@drawable/ic_plus"
-                    android:scaleType="center"
+                    android:scaleType="fitCenter"
                     android:background="@drawable/rounded_corner"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:contentDescription="Add Pet Photo"/>
+                    android:contentDescription="Add Pet Photo"
+                    android:adjustViewBounds="true"/>
 
                 <ImageView
                     android:id="@+id/petPhoto6"
@@ -131,11 +136,12 @@
                     android:layout_height="150dp"
                     android:layout_columnWeight="1"
                     android:src="@drawable/ic_plus"
-                    android:scaleType="center"
+                    android:scaleType="fitCenter"
                     android:background="@drawable/rounded_corner"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:contentDescription="Add Pet Photo"/>
+                    android:contentDescription="Add Pet Photo"
+                    android:adjustViewBounds="true"/>
 
             </GridLayout>
 
