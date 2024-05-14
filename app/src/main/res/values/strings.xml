@@ -5,6 +5,15 @@
     <string name="title_paw">Paw</string>
     <string name="title_chat">Chat</string>
     <string name="title_profile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="gender_array">
+        <item>Femelle</item>
+        <item>Mâle</item>
+    </string-array>
+
+    <string-array name="size_array">
+        <item>Petit</item>
+        <item>Moyen</item>
+        <item>Grand</item>
+    </string-array>
 </resources>

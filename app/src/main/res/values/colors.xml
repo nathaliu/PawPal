@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#D36D7A</color>
+    <color name="pink_light">#F4DADE</color>
     <color name="tofu">#F5F5F5</color>
     <color name="brown">#4E342E</color>
 </resources>

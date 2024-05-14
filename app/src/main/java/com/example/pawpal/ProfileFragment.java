@@ -20,11 +20,6 @@ import java.io.IOException;
 
 public class ProfileFragment extends Fragment {
 
-    // Constantes pour les requêtes de sélection d'images
-    private static final int REQUEST_IMAGE_GALLERY_USER = 0;
-    private static final int REQUEST_IMAGE_CAPTURE_PET = 1;
-    private static final int REQUEST_IMAGE_GALLERY_PET = 2;
-
     // Vues
     private ImageView userImageView;
     private EditText usernameEditText;
@@ -41,14 +36,14 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         // Initialisation des vues
-        userImageView = view.findViewById(R.id.userImageView);
         usernameEditText = view.findViewById(R.id.usernameEditText);
         petNameEditText = view.findViewById(R.id.petNameEditText);
-        petRaceEditText = view.findViewById(R.id.petRaceEditText);
-        petPersonalityEditText = view.findViewById(R.id.petPersonalityEditText);
 
         // Gestionnaire de clic pour l'image utilisateur
-        userImageView.setOnClickListener(v -> openImageGallery(REQUEST_IMAGE_GALLERY_USER));
+        view.findViewById(R.id.userImage).setOnClickListener(v -> {
+            selectedPetPhotoId = R.id.userImage;
+            openImageSelectionDialog();
+        });
 
         // Gestionnaires de clic pour les images d'animaux
         view.findViewById(R.id.petPhoto1).setOnClickListener(v -> {
@@ -79,12 +74,6 @@ public class ProfileFragment extends Fragment {
         return view;
     }
 
-    // Méthode pour ouvrir la galerie d'images
-    private void openImageGallery(int requestCode) {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, requestCode);
-    }
-
     // Méthode pour ouvrir la boîte de dialogue de sélection d'image
     private void openImageSelectionDialog() {
         // Demander à l'utilisateur de choisir entre la galerie et l'appareil photo
@@ -94,7 +83,7 @@ public class ProfileFragment extends Fragment {
         Intent chooserIntent = Intent.createChooser(pickGalleryIntent, "Select Picture");
         chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] { takePictureIntent });
 
-        startActivityForResult(chooserIntent, REQUEST_IMAGE_GALLERY_PET);
+        startActivityForResult(chooserIntent, 0);
     }
 
     @Override
@@ -102,19 +91,7 @@ public class ProfileFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {
-                case REQUEST_IMAGE_GALLERY_USER:
-                    // Si l'utilisateur a sélectionné une image depuis la galerie
-                    if (data != null) {
-                        Uri selectedImage = data.getData();
-                        try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), selectedImage);
-                            userImageView.setImageBitmap(bitmap);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    break;
-                case REQUEST_IMAGE_GALLERY_PET:
+                case 0:
                     // Si l'utilisateur a sélectionné une image d'animal depuis la galerie
                     if (data != null && data.getData() != null) {
                         Uri selectedImage = data.getData();
@@ -125,13 +102,11 @@ public class ProfileFragment extends Fragment {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                    } else {
+                    } else if (data != null && data.getExtras() != null && data.getExtras().get("data") != null) {
                         // Si l'utilisateur a pris une photo de l'animal
-                        if (data != null && data.getExtras() != null) {
-                            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                            ImageView petPhotoImageView = getView().findViewById(selectedPetPhotoId);
-                            petPhotoImageView.setImageBitmap(bitmap);
-                        }
+                        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                        ImageView petPhotoImageView = getView().findViewById(selectedPetPhotoId);
+                        petPhotoImageView.setImageBitmap(bitmap);
                     }
                     break;
             }
