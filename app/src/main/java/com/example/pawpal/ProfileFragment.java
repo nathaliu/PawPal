@@ -21,14 +21,11 @@ import java.io.IOException;
 public class ProfileFragment extends Fragment {
 
     // Vues
-    private ImageView userImageView;
     private EditText usernameEditText;
     private EditText petNameEditText;
-    private EditText petRaceEditText;
-    private EditText petPersonalityEditText;
 
     // Identifiant de la photo d'animal sélectionnée
-    private int selectedPetPhotoId;
+    private int selectedPhotoId;
 
     // Méthode appelée lors de la création de la vue du fragment
     @Nullable
@@ -42,33 +39,33 @@ public class ProfileFragment extends Fragment {
 
         // Gestionnaire de clic pour l'image utilisateur
         view.findViewById(R.id.userImage).setOnClickListener(v -> {
-            selectedPetPhotoId = R.id.userImage;
+            selectedPhotoId = R.id.userImage;
             openImageSelectionDialog();
         });
 
-        // Gestionnaires de clic pour les images d'animaux
+        // Gestionnaire de clic pour les images d'animaux
         view.findViewById(R.id.petPhoto1).setOnClickListener(v -> {
-            selectedPetPhotoId = R.id.petPhoto1;
+            selectedPhotoId = R.id.petPhoto1;
             openImageSelectionDialog();
         });
         view.findViewById(R.id.petPhoto2).setOnClickListener(v -> {
-            selectedPetPhotoId = R.id.petPhoto2;
+            selectedPhotoId = R.id.petPhoto2;
             openImageSelectionDialog();
         });
         view.findViewById(R.id.petPhoto3).setOnClickListener(v -> {
-            selectedPetPhotoId = R.id.petPhoto3;
+            selectedPhotoId = R.id.petPhoto3;
             openImageSelectionDialog();
         });
         view.findViewById(R.id.petPhoto4).setOnClickListener(v -> {
-            selectedPetPhotoId = R.id.petPhoto4;
+            selectedPhotoId = R.id.petPhoto4;
             openImageSelectionDialog();
         });
         view.findViewById(R.id.petPhoto5).setOnClickListener(v -> {
-            selectedPetPhotoId = R.id.petPhoto5;
+            selectedPhotoId = R.id.petPhoto5;
             openImageSelectionDialog();
         });
         view.findViewById(R.id.petPhoto6).setOnClickListener(v -> {
-            selectedPetPhotoId = R.id.petPhoto6;
+            selectedPhotoId = R.id.petPhoto6;
             openImageSelectionDialog();
         });
 
@@ -94,21 +91,21 @@ public class ProfileFragment extends Fragment {
         if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {
                 case 0:
-                    // Si l'utilisateur a sélectionné une image d'animal depuis la galerie
+                    // Si l'utilisateur a sélectionné une image depuis la galerie
                     if (data != null && data.getData() != null) {
                         Uri selectedImage = data.getData();
                         try {
                             Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), selectedImage);
-                            ImageView petPhotoImageView = getView().findViewById(selectedPetPhotoId);
-                            petPhotoImageView.setImageBitmap(bitmap);
+                            ImageView photoImageView = getView().findViewById(selectedPhotoId);
+                            photoImageView.setImageBitmap(bitmap);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     } else if (data != null && data.getExtras() != null && data.getExtras().get("data") != null) {
-                        // Si l'utilisateur a pris une photo de l'animal
+                        // Si l'utilisateur a pris une photo à partir de la caméra
                         Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                        ImageView petPhotoImageView = getView().findViewById(selectedPetPhotoId);
-                        petPhotoImageView.setImageBitmap(bitmap);
+                        ImageView photoImageView = getView().findViewById(selectedPhotoId);
+                        photoImageView.setImageBitmap(bitmap);
                     }
                     break;
             }
