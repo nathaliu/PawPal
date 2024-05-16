@@ -30,6 +30,7 @@ public class ProfileFragment extends Fragment {
     // Identifiant de la photo d'animal sélectionnée
     private int selectedPetPhotoId;
 
+    // Méthode appelée lors de la création de la vue du fragment
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -86,6 +87,7 @@ public class ProfileFragment extends Fragment {
         startActivityForResult(chooserIntent, 0);
     }
 
+    // Méthode appelée lorsque le résultat de l'activité de sélection d'image est retourné
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
