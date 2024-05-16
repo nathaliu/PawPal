@@ -18,22 +18,27 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
+    // Variable pour stocker la référence à l'objet GoogleMap
     private GoogleMap mMap;
 
+    // Constructeur par défaut de la classe MapsFragment
     public MapsFragment() {
-        // Required empty public constructor
+        // Constructeur vide
     }
 
+    // Méthode appelée lors de la création de la vue du fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflater le layout pour ce fragment
         return inflater.inflate(R.layout.fragment_map, container, false);
     }
 
+    // Méthode appelée lorsque la vue du fragment est créée
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Récupérer le SupportMapFragment et demander la carte asynchrone
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
         if (mapFragment != null) {
@@ -41,10 +46,11 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
+    // Méthode appelée lorsque la carte est prête à être utilisée
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // Add a marker in default location and move the camera
+        // Ajouter un marqueur à la position par défaut et déplacer la caméra
         LatLng defaultLocation = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(defaultLocation).title("Marker in Default Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(defaultLocation));
