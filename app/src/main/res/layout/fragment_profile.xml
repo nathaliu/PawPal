@@ -165,13 +165,70 @@
 
             </GridLayout>
 
+            <!-- Species -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Espèce : "
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:id="@+id/speciesEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Espèce"
+                    android:textSize="18sp"
+                    android:background="@drawable/rounded_corner"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:textColor="@color/brown"/>
+
+            </LinearLayout>
+
+            <!-- Race -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Race : "
+                    android:textSize="18sp"
+                    android:textColor="@color/brown"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:id="@+id/raceEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Race"
+                    android:textSize="18sp"
+                    android:background="@drawable/rounded_corner"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:textColor="@color/brown"/>
+
+            </LinearLayout>
 
             <!-- Gender Selection -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="5dp"
                 android:layout_marginTop="16dp">
 
                 <TextView
@@ -184,7 +241,7 @@
 
                 <Spinner
                     android:id="@+id/genderSpinner"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/gender_array"
                     android:background="@drawable/rounded_corner"
@@ -198,7 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="5dp"
                 android:layout_marginTop="16dp">
 
                 <TextView
@@ -211,7 +268,7 @@
 
                 <EditText
                     android:id="@+id/ageEditText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Âge"
                     android:inputType="number"
@@ -228,7 +285,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="5dp"
                 android:layout_marginTop="16dp">
 
                 <TextView
@@ -241,7 +298,7 @@
 
                 <Spinner
                     android:id="@+id/sizeSpinner"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/size_array"
                     android:background="@drawable/rounded_corner"
