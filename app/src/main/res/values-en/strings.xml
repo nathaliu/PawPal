@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PawPal</string>
+    <string name="title_home">Home</string>
+    <string name="title_map">Map</string>
+    <string name="title_paw">Paw</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_profile">Profile</string>
+
+    <string-array name="gender_array">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="size_array">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Tall</item>
+    </string-array>
+
+</resources>

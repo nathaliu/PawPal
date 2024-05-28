@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">PawPal</string>
-    <string name="title_home">Home</string>
-    <string name="title_map">Map</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_map">Carte</string>
     <string name="title_paw">Paw</string>
-    <string name="title_chat">Chat</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_chat">Messages</string>
+    <string name="title_profile">Profil</string>
 
     <string-array name="gender_array">
         <item>Femelle</item>
